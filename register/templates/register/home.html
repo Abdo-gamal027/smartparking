@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- Template by Quackit.com -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Home</title>
+
+    {% load static %}
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'custom.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon-fire"></span>
+                    smart parking system
+                </a>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="/">Home</a>
+                    </li>
+
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="location/">Booking</a>
+                    </li>
+                    {% endif %}
+
+                    {% if not user.is_authenticated %}
+                    <li>
+                        <a href="register/">Sign up</a>
+                    </li>
+                    <li>
+                        <a href="login/">Log in</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    {% if user.is_authenticated %}
+
+                    <li>
+                        <a href="logout/">Log out</a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+
+
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="jumbotron feature">
+        <div class="container">
+            <p><span class="glyphicon glyphicon-equalizer"></span>Don't waste your time searching for a place to leave your car, just visit our website and choose your
+                place easily.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">How to use:
+                </h1>
+
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Feature Row -->
+        <div class="row">
+            <article class="col-md-4 article-intro">
+                <img class="img-responsive img-rounded" src="{% static '11.png' %}" alt="El-shikh_zaid">
+
+                <p>After registering on the site and logging in, you can reserve your place in the garage</p>
+
+            </article>
+            <article class="col-md-4 article-intro">
+                <img class="img-responsive img-rounded" src="{% static '22.png' %}" alt="6 October City">
+                <p> When you reach the portal, you just have to enter the confirmation code which we will send to you by
+                    text message
+                    The gate will open automatically and allow you to enter</p>
+
+            </article>
+        </div>
+        <div class="row">
+            <article class="col-md-4 article-intro">
+
+                <img class="img-responsive img-rounded" src="{% static '44.png' %}" alt="El-shikh_zaid">
+
+                <p>you must follow the GPS direction to reach the correct location If you do not stick to your place,
+                    you will pay a fine</p>
+
+            </article>
+            <article class="col-md-4 article-intro">
+                <img class="img-responsive img-rounded" src="{% static '33.png' %}" alt="6 October City">
+                <p> When you want to leave the garage, we will calculate the number of hours you waited and then pay by
+                    Visa</p>
+
+            </article>
+        </div>
+
+
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="footer-blurb">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-4 footer-blurb-item">
+                    </div>
+
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+
+        <div class="small-print">
+            <div class="container">
+                <p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jQuery -->
+    <script src="{% static 'jquery-1.11.3.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+
+    <!-- IE10 viewport bug workaround -->
+    <script src="{% static 'ie10-viewport-bug-workaround.js' %}"></script>
+
+    <!-- Placeholder Images -->
+    <script src="{% static 'holder.min.js' %}"></script>
+
+</body>
+
+</html>
+
